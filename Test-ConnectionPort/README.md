@@ -1,4 +1,4 @@
-# Test-ConnectionPort
+# Test-ConnectionPort.ps1
 
 **.DESCRIPTION**  
 TCP port ping to a target. One time or in a loop. Logging function integrated.  
