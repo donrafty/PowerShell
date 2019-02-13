@@ -10,7 +10,7 @@ PARAM
 
 <# README.md  
  .DESCRIPTION  
- Test a TCP port on a target. One time or in a loop. Logging function integrated.  
+ TCP port ping to a target. One time or in a loop. Logging function integrated.  
  .NOTES  
  Author: Raphael Koller (@koll0x3e7)  
  .PARAMETER -IP  
