@@ -39,11 +39,11 @@ if(($IP -as [ipaddress]) -or ([System.Net.Dns]::GetHostEntry($IP))){
             try{
                 $Socket = New-Object System.Net.Sockets.TcpClient($IP,$Port)
                 if($Socket.Connected) {
-	                Write-Output "$(get-date) :: $IP is listening on TCP $Port."
+	                Write-Output "$(get-date) :: Successfully connected to $($IP):$($Port)"
                 }
             }
             catch{
-                Write-Error "$(get-date) :: $IP isn't listening on TCP $Port."
+                Write-Error "$(get-date) :: Failed to connect to $($IP):$($Port)"
             }
             sleep -Seconds 1
         }
@@ -52,11 +52,11 @@ if(($IP -as [ipaddress]) -or ([System.Net.Dns]::GetHostEntry($IP))){
         try{
             $Socket = New-Object System.Net.Sockets.TcpClient($IP,$Port)
             if($Socket.Connected) {
-	            Write-Output "$(get-date) :: $IP is listening on TCP $Port."
+	            Write-Output "$(get-date) :: Successfully connected to $($IP):$($Port)"
             }
         }
         catch{
-            Write-Error "$(get-date) :: $IP isn't listening on TCP $Port."
+            Write-Error "$(get-date) :: Failed to connect to $($IP):$($Port)"
         }
     }
 }
