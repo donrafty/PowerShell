@@ -10,7 +10,7 @@ PARAM
 
 <# README.md  
  .DESCRIPTION  
- Test a TCP port on a target server. One time or in a loop. Logging function integrated.  
+ Test a TCP port on a target. One time or in a loop. Logging function integrated.  
  .NOTES  
  Author: Raphael Koller (@koll0x3e7)  
  .PARAMETER -IP  
@@ -20,7 +20,7 @@ PARAM
  .PARAMETER -Loop  
  Switch parameter for an one time or a loop port ping test.  
  .PARAMETER -Log  
- Logging enable or disable. Path: "$env:TEMP\$(Get-Date -format ddMMyyyy_HHmmss)_$($IP)_ConnectionPort.log".  
+ Logging enable or disable. Path: "$env:TEMP\$(Get-Date -format ddMMyyyy_HHmmss)_$($IP)_$($Port)_ConnectionPort.log".  
  .EXAMPLE without loop  
  PS> .\Test-ConnectionPort.ps1 -IP 1.1.1.1 -Port 53  
  .EXAMPLE with loop  
@@ -31,7 +31,7 @@ PARAM
 
 if(($IP -as [ipaddress]) -or ([System.Net.Dns]::GetHostEntry($IP))){
     if($Log -eq $true){
-        Start-Transcript -Path "$env:TEMP\$(Get-Date -format ddMMyyyy_HHmmss)_$($IP)_ConnectionPort.log"
+        Start-Transcript -Path "$env:TEMP\$(Get-Date -format ddMMyyyy_HHmmss)_$($IP)_$($Port)_ConnectionPort.log"
     }
 
     if($Loop -eq $true){
