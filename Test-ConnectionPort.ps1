@@ -20,12 +20,12 @@ PARAM
  .PARAMETER -Loop  
  Switch parameter for an one time or a loop port ping test.  
  .PARAMETER -Log  
- Logging enable or disable. Path: "$env:TEMP\$(Get-Date -format ddMMyyyy_HHmmss)_$($IP)_$($Port)_ConnectionPort.log".  
+ Logging enable or disable. Path: "$env:TEMP\$(Get-Date -format ddMMyyyy_HHmmss)_$($IP)_$($Port)_ConnectionPort.log"  
  .EXAMPLE without loop  
  PS> .\Test-ConnectionPort.ps1 -IP 1.1.1.1 -Port 53  
  .EXAMPLE with loop  
  PS> .\Test-ConnectionPort.ps1 -IP 1.1.1.1 -Port 53 -Loop:$true  
- .EXAMPLE with logging to the default path.  
+ .EXAMPLE with logging to the default path  
  PS> .\Test-ConnectionPort.ps1 -IP 1.1.1.1 -Port 53 -Loop:$true -Log:$true  
 #>  
 
@@ -39,11 +39,11 @@ if(($IP -as [ipaddress]) -or ([System.Net.Dns]::GetHostEntry($IP))){
             try{
                 $Socket = New-Object System.Net.Sockets.TcpClient($IP,$Port)
                 if($Socket.Connected) {
-	                Write-Output "$(get-date) :: $IP is listening to port $Port"
+	                Write-Output "$(get-date) :: $IP is listening on TCP $Port."
                 }
             }
             catch{
-                Write-Error "$(get-date) :: $IP isn't listening on port $Port"
+                Write-Error "$(get-date) :: $IP isn't listening on TCP $Port."
             }
             sleep -Seconds 1
         }
@@ -52,11 +52,11 @@ if(($IP -as [ipaddress]) -or ([System.Net.Dns]::GetHostEntry($IP))){
         try{
             $Socket = New-Object System.Net.Sockets.TcpClient($IP,$Port)
             if($Socket.Connected) {
-	            Write-Output "$(get-date) :: $IP is listening to port $Port"
+	            Write-Output "$(get-date) :: $IP is listening on TCP $Port."
             }
         }
         catch{
-            Write-Error "$(get-date) :: $IP isn't listening on port $Port"
+            Write-Error "$(get-date) :: $IP isn't listening on TCP $Port."
         }
     }
 }
