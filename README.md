@@ -1,5 +1,4 @@
 # PowerShell
-Various PowerShell scripts.
 
 ## Test-ConnectionPort
 **.DESCRIPTION**  
