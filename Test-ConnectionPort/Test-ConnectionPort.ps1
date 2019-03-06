@@ -12,7 +12,7 @@ PARAM
  .DESCRIPTION  
  TCP port ping to a target. One time or in a loop. Logging function integrated.  
  .NOTES  
- Author: Raphael Koller (@koll0x3e7)  
+ Author: Raphael Koller (@0x3e4)  
  .PARAMETER -IP  
  IP or FQDN of the target server. It's a mandatory parameter.  
  .PARAMETER -Port  
