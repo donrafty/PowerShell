@@ -43,7 +43,7 @@ if(($IP -as [ipaddress]) -or ([System.Net.Dns]::GetHostEntry($IP))){
                 }
             }
             catch{
-                Write-Error "$(get-date) :: Failed to connect to $($IP):$($Port)"
+                Write-Host -ForegroundColor Red "$(get-date) :: Failed to connect to $($IP):$($Port)"
             }
             sleep -Seconds 1
         }
@@ -56,10 +56,10 @@ if(($IP -as [ipaddress]) -or ([System.Net.Dns]::GetHostEntry($IP))){
             }
         }
         catch{
-            Write-Error "$(get-date) :: Failed to connect to $($IP):$($Port)"
+            Write-Host -ForegroundColor Red "$(get-date) :: Failed to connect to $($IP):$($Port)"
         }
     }
 }
 else{
-    Write-Error -Message $_.Exception
+    Write-Host -ForegroundColor Red $_.Exception.Message
 }
