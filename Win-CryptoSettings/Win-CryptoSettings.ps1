@@ -80,8 +80,8 @@ try{
 
     if((!$ComputerName) -or (($SocketTCP135.Connected) -and ($SocketTCP445.Connected))){
 
-        $SocketTCP135.Close()
-        $SocketTCP445.Close()
+        if($SocketTCP135.Connected){$SocketTCP135.Close()}
+        if($SocketTCP445.Connected){$SocketTCP445.Close()}
 
         if($Purpose -ne "Check"){
 
