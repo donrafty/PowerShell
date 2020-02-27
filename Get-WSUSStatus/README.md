@@ -9,7 +9,7 @@ Mail address of the sender. It's a mandatory parameter.
 **.PARAMETER -To**  
 Mail address of the recipient. It's a mandatory parameter.  
 **.PARAMETER -Smtp**  
-IP or DNS of the mail server. It's a mandatory parameter. 
+IP or DNS of the mail server. It's a mandatory parameter.  
 **.PARAMETER -ReportPath**  
 Folder for the .csv files. Default Path: "$env:TEMP"  
 **.EXAMPLE**  
