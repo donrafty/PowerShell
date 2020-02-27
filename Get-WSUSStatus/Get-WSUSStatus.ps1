@@ -38,7 +38,7 @@ $WSUS.GetComputerTargets($ComputerScope) | % {
 $body = "<html><head><meta http-equiv=""Content-Type"" content=""text/html"" /></head>"
 $body += "<body style=""font-family: Calibri; color: #000000;""><P>"
 $body += "Dear administrator,<p>"
-$body += "find the current weekly report of the $$env:USERDNSDOMAIN WSUS environment in the mail attachment.<br>"
+$body += "find the current weekly report of the $env:USERDNSDOMAIN WSUS environment in the mail attachment.<br>"
 $body += "Get-WSUSStatus.ps1 is a scheduled task on $env:COMPUTERNAME.<p>"
 
 Send-MailMessage -From $From -To $To -Subject "WSUS Client Status | $env:USERDNSDOMAIN" -bodyashtml -body $body -SmtpServer $Smtp -Attachments $Report + ".csv", $Report + "_detailed.csv"
