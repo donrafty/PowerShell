@@ -9,6 +9,23 @@ PARAM
     [string]$ReportPath = $env:TEMP
 )
 
+<# README.md  
+ .DESCRIPTION  
+ Get a .csv with the current status of the WSUS server. Detailed view of the clients and approved updates in a sperate .csv included too.  
+ .NOTES  
+ Author: Raphael Koller (@0x3e4)  
+ .PARAMETER -From  
+ Mail address of the sender. It's a mandatory parameter.  
+ .PARAMETER -To  
+ Mail address of the recipient. It's a mandatory parameter.  
+ .PARAMETER -Smtp  
+ IP or DNS of the mail server. It's a mandatory parameter. 
+ .PARAMETER -ReportPath  
+ Folder for the .csv files. Default Path: "$env:TEMP"  
+ .EXAMPLE without loop  
+ PS> .\Get-WSUSStatus -From "bot@contoso.com" -To "human@contos.com" -Smtp "mail.contoso.com"
+#>  
+
 $ReportSummary = $ReportPath + "\$(Get-Date -format ddMMyyyy_HHmmss)_Get-WSUSStatus_summary.csv"
 $ReportDetailed = $ReportPath + "\$(Get-Date -format ddMMyyyy_HHmmss)_Get-WSUSStatus_detailed.csv"
 
