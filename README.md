@@ -1,8 +1,8 @@
 # PowerShell
 
 ## Get-WSUSStatus
-**.DESCRIPTION**
-Get a .csv with the current status of the WSUS server. Detailed view of the clients and approved updates in a sperate .csv included too.
+**.DESCRIPTION**  
+Get a .csv with the current status of the WSUS server. Detailed view of the clients and approved updates in a sperate .csv included too.  
 
 ## Test-ConnectionPort
 **.DESCRIPTION**  
