@@ -13,4 +13,4 @@ IP or DNS of the mail server. It's a mandatory parameter.
 **.PARAMETER -ReportPath**  
 Folder for the .csv files. Default Path: "$env:TEMP"  
 **.EXAMPLE**  
-```PS> .\Get-WSUSStatus.ps1 -From "bot@contoso.com" -To "human@contos.com" -Smtp "mail.contoso.com"```
+```PS> .\Get-WSUSStatus.ps1 -From "bot@contoso.com" -To "human@contoso.com" -Smtp "mail.contoso.com"```
