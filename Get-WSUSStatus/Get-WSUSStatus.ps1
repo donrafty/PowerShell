@@ -22,7 +22,7 @@ PARAM
  IP or DNS of the mail server. It's a mandatory parameter. 
  .PARAMETER -ReportPath  
  Folder for the .csv files. Default Path: "$env:TEMP"  
- .EXAMPLE without loop  
+ .EXAMPLE 
  PS> .\Get-WSUSStatus -From "bot@contoso.com" -To "human@contos.com" -Smtp "mail.contoso.com"
 #>  
 
