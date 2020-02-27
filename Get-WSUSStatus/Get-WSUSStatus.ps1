@@ -23,7 +23,7 @@ PARAM
  .PARAMETER -ReportPath  
  Folder for the .csv files. Default Path: "$env:TEMP"  
  .EXAMPLE 
- PS> .\Get-WSUSStatus -From "bot@contoso.com" -To "human@contos.com" -Smtp "mail.contoso.com"
+ PS> .\Get-WSUSStatus.ps1 -From "bot@contoso.com" -To "human@contos.com" -Smtp "mail.contoso.com"
 #>  
 
 $ReportSummary = $ReportPath + "\$(Get-Date -format ddMMyyyy_HHmmss)_Get-WSUSStatus_summary.csv"
