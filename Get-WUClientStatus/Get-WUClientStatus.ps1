@@ -1,4 +1,4 @@
-﻿PARAM
+PARAM
 (
     [Parameter(Mandatory=$true)]
     [string]$From,
@@ -15,7 +15,7 @@
  Send a mail with a .csv and the current pending reboot and pending windows update status of registered clients in WSUS.  
  .NOTES  
  Author: Raphael Koller (@0x3e4)  
- .REQUIRES  
+ .REQUIRES
  PSWindowsUpdate module: https://www.powershellgallery.com/packages/PSWindowsUpdate/2.1.1.2
  .PARAMETER -From  
  Mail address of the sender. It's a mandatory parameter.  
@@ -59,7 +59,11 @@ if (!$ClientPath) {
             } | Select-Object FQDN,PendingRebootWU,PendingUpdateKB
         }
         catch{
-            $FQDN + " connection not possible."
+            New-Object PSObject -Property @{
+                FQDN = $FQDN + " connection not possible."
+                PendingRebootWU = $null
+                PendingUpdateKB = $null
+            } | Select-Object FQDN,PendingRebootWU,PendingUpdateKB
         }
 
     } | Export-Csv $ReportSummary -NoTypeInformation
@@ -82,7 +86,11 @@ else {
             } | Select-Object FQDN,PendingRebootWU,PendingUpdateKB
         }
         catch{
-            $FQDN + " connection not possible."
+            New-Object PSObject -Property @{
+                FQDN = $FQDN + " connection not possible."
+                PendingRebootWU = $null
+                PendingUpdateKB = $null
+            } | Select-Object FQDN,PendingRebootWU,PendingUpdateKB
         }
 
     } | Export-Csv $ReportSummary -NoTypeInformation
