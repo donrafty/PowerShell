@@ -5,7 +5,7 @@ Send a mail with a .csv and the current pending reboot and pending windows updat
 **.NOTES**  
 Author: Raphael Koller (@0x3e4)  
 **.REQUIRES**  
-PSWindowsUpdate module: https://www.powershellgallery.com/packages/PSWindowsUpdate/2.1.1.2
+PSWindowsUpdate module: https://www.powershellgallery.com/packages/PSWindowsUpdate/2.1.1.2  
 **.PARAMETER -From**  
 Mail address of the sender. It's a mandatory parameter.  
 **.PARAMETER -To**  
@@ -19,4 +19,4 @@ Folder for the .csv files. Default Path: "$env:TEMP"
 **.EXAMPLE without a client path file**  
 ```PS> .\Get-WUClientStatus.ps1 -From "bot@contoso.com" -To "human@contoso.com" -Smtp "mail.contoso.com"```  
 **.EXAMPLE with a client path file**  
-```PS> .\Get-WUClientStatus.ps1 -From "bot@contoso.com" -To "human@contoso.com" -Smtp "mail.contoso.com" -ClientPath "C:\tmp\clients.csv"```  
+```PS> .\Get-WUClientStatus.ps1 -From "bot@contoso.com" -To "human@contoso.com" -Smtp "mail.contoso.com" -ClientPath "C:\tmp\Clients.csv"```  
